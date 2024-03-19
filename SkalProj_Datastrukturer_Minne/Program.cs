@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 
 namespace SkalProj_Datastrukturer_Minne
 {
@@ -128,7 +127,7 @@ andra returnerar 4, varför?
             while (true)
             {
                 Console.WriteLine("Enter + to add or - to remove (e.g., +Adam or -Adam):");
-                string input = Console.ReadLine();
+                string input = Console.ReadLine()!;
 
                 if (input.Length < 2)
                 {
@@ -187,8 +186,8 @@ andra returnerar 4, varför?
                                          * */
                 }
                 Console.WriteLine("Press Enter to continue or type 'e' to exit:");
-                string exitInput = Console.ReadLine();
-                if (exitInput.ToLower() == "e")
+                string exitInput = Console.ReadLine()!;
+                if (exitInput != null && exitInput.ToLower() == "e")
                     break;
             }
 
@@ -208,13 +207,13 @@ andra returnerar 4, varför?
             while (true)
             {
                 Console.WriteLine("Enter e: 'enqueue' to add an item or d: 'dequeue' to remove an item:");
-                string input = Console.ReadLine();
+                string input = Console.ReadLine()!;
 
                 switch (input.ToLower())
                 {
                     case "e":
                         Console.WriteLine("Enter the item to enqueue:");
-                        string item = Console.ReadLine();
+                        string item = Console.ReadLine()!;
                         queue.Enqueue(item);
                         Console.WriteLine($"Item '{item}' enqueued.");
                         PrintQueue(queue);
@@ -223,7 +222,7 @@ andra returnerar 4, varför?
                     case "d":
                         if (queue.Count > 0)
                         {
-                            object dequeuedItem = queue.Dequeue();
+                            object dequeuedItem = queue.Dequeue()!;
                             Console.WriteLine($"Item '{dequeuedItem}' dequeued.");
                         }
                         else
@@ -238,7 +237,7 @@ andra returnerar 4, varför?
                         break;
                 }
                 Console.WriteLine("Press Enter to continue or type 'e' to exit:");
-                string exitInput = Console.ReadLine();
+                string exitInput = Console.ReadLine()!;
                 if (exitInput.ToLower() == "e")
                     break;
 
@@ -272,13 +271,13 @@ andra returnerar 4, varför?
             while (true)
             {
                 Console.WriteLine("Enter 'push' to add an item or 'pop' to remove an item:");
-                string input = Console.ReadLine();
+                string input = Console.ReadLine()!;
 
                 switch (input.ToLower())
                 {
                     case "push":
                         Console.WriteLine("Enter the item to push:");
-                        string itemToPush = Console.ReadLine();
+                        string itemToPush = Console.ReadLine()!;
                         stack.Push(itemToPush);
                         Console.WriteLine($"Item '{itemToPush}' pushed.");
                         PrintStack(stack);
@@ -287,7 +286,7 @@ andra returnerar 4, varför?
                     case "pop":
                         if (stack.Count > 0)
                         {
-                            object poppedItem = stack.Pop();
+                            object poppedItem = stack.Pop()!;
                             Console.WriteLine($"Item '{poppedItem}' popped.");
                         }
                         else
@@ -303,7 +302,7 @@ andra returnerar 4, varför?
                 }
 
                 Console.WriteLine("Press Enter to continue or type 'exit' to exit:");
-                string exitInput = Console.ReadLine();
+                string exitInput = Console.ReadLine()!;
                 if (exitInput.ToLower() == "exit")
                     break;
 
@@ -329,7 +328,7 @@ andra returnerar 4, varför?
         static void ReverseText()
         {
             Console.WriteLine("Enter the text you want to reverse:");
-            string input = Console.ReadLine();
+            string input = Console.ReadLine()!;
 
             // Create a stack to reverse the text
             Stack<char> charStack = new Stack<char>();
@@ -361,7 +360,7 @@ andra returnerar 4, varför?
              */
 
             Console.WriteLine("Enter a string containing parentheses:");
-            string input = Console.ReadLine();
+            string input = Console.ReadLine()!;
 
             // Create a stack 
             Stack<char> stack = new Stack<char>();
